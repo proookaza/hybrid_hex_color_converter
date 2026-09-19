@@ -17,7 +17,7 @@ extension HexColor on Color {
   ///
   /// Example usage:
   ///   final color = HybridHexColorConverter.fromHex('#FF0000'); // Red
-  static Color? fromHex(String hexString) {
+  static Color? fromHex(String? hexString) {
     final buffer = StringBuffer();
     try {
       if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
