@@ -17,14 +17,14 @@ extension HexColor on Color {
   ///
   /// Example usage:
   ///   final color = HybridHexColorConverter.fromHex('#FF0000'); // Red
-  static Color fromHex(String hexString) {
+  static Color? fromHex(String hexString) {
     final buffer = StringBuffer();
     try {
       if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
       buffer.write(hexString.replaceFirst('#', ''));
       return Color(int.parse(buffer.toString(), radix: 16));
     } catch (e) {
-      return Color(int.parse('928F8F', radix: 16));
+      return null;
     }
   }
 
